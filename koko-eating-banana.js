@@ -1,4 +1,5 @@
-/* Koko eating bananas: https://practice.geeksforgeeks.org/problems/koko-eating-bananas/1 */
+/* Koko eating bananas: https://practice.geeksforgeeks.org/problems/koko-eating-bananas/1
+ Time Complexity -> (nlogn) | Space Complexity -> O(1)*/
 
 function canEatAll(arr, hours, mid) {
   let totalHours = 0;
@@ -19,7 +20,7 @@ function minimumNo(arr, hours) {
     mid = Math.floor((low + high) / 2);
 
     if (canEatAll(arr, hours, mid)) {
-      high = mid;
+      high = mid - 1;
     } else {
       low = mid + 1;
     }
@@ -28,5 +29,5 @@ function minimumNo(arr, hours) {
   return low;
 }
 
-const result = minimumNo([30, 11, 23, 4, 20], 5);
+const result = minimumNo([3, 6, 7, 11], 8);
 console.log(result);
